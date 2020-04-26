@@ -8,6 +8,8 @@ import { ProductData } from "./products/product-data";
 
 import { AppRoutingModule } from "./app-routing.module";
 
+import { environment } from "../environments/environment";
+
 import { AppComponent } from "./app.component";
 import { ShellComponent } from "./home/shell.component";
 import { MenuComponent } from "./home/menu.component";
@@ -20,6 +22,9 @@ import { UserModule } from "./user/user.module";
 // NgRx Store module
 import { StoreModule } from "@ngrx/store";
 
+// NgRx dev tools
+import { StoreDevtoolsModule } from "@ngrx/store-devtools";
+
 @NgModule({
   imports: [
     BrowserModule,
@@ -28,6 +33,11 @@ import { StoreModule } from "@ngrx/store";
     UserModule,
     AppRoutingModule,
     StoreModule.forRoot({}),
+    StoreDevtoolsModule.instrument({
+      name: "APM Demo App DevTools ",
+      maxAge: 25,
+      logOnly: environment.production,
+    }),
   ],
   declarations: [
     AppComponent,
