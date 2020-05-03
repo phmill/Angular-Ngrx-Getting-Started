@@ -75,7 +75,10 @@ export function reducer(
       return state;
 
     case ProductActionTypes.LoadSuccess:
-      return state;
+      return {
+        ...state,
+        products: action.payload,
+      };
 
     case ProductActionTypes.LoadFail:
       return state;
