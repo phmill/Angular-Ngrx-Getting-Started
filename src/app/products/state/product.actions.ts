@@ -8,7 +8,7 @@ export enum ProductActionTypes {
   InitializeCurrentProduct = "[Product] Initialize Current Product",
   Load = "[Product] Load",
   LoadSuccess = "[Product] Load success",
-  LoadFail = "[Product] cannot receive list of products from the server",
+  LoadFail = "[Product] Load Fail",
 }
 
 export class Load implements Action {
